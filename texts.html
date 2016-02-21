@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">    
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+
+		<style type="text/css">
+		*{
+		font-family: 'Open Sans', sans-serif;
+		background-color: #242424;
+		font-weight: 400;
+		color:#fff;
+
+		}
+		body {
+			width:99%;
+		}
+		#container{
+			margin-top:150px;
+			margin-left: auto;
+		    margin-right: auto;
+		    width: 50%;
+
+		}
+		.subClass{
+			background-repeat: no-repeat;
+			    height: 47px;
+    padding: 21px;
+    position: absolute;
+    text-align: center;
+    width: 88px;
+			border:1px;
+			border-style: solid;
+			border-radius: 10px;
+			border-color: rgba(255,255,255,0.1);
+			padding:25px;
+		}
+		#main_Elements{
+			position: relative;
+		}
+
+		.align_0{}
+		.align_1{top:120px}
+		.align_2{top:250px}
+		.align_3{top:380px}
+
+		.align_4{left:150px;}
+		.align_5{left:150px;top:120px;}
+		.align_6{left:150px;top:250px;}
+		.align_7{left:150px;top:380px;}
+
+		.align_8{left:300px;}
+		.align_9{left:300px;top:120px}
+		.align_10{left:300px;top:250px}
+		.align_11{left:300px;top:380px}
+
+		.testImage{
+		float: right;
+	    left: 40%;
+	    position: absolute;
+	    top: 60px;
+		}
+		.headi{
+			    position: relative;
+    			top: -30px;
+		}
+		</style>
+	</head>
+
+	<body>
+	<div id="container">
+		<h3 class='headi'>Identify this text ===> elephant</h3> 
+
+		<div id="source_image"></div>
+		<div id="main_Elements"></div>
+
+	
+	</div> <!-- end container -->
+	</body>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script type="text/javascript">
+	var imageList = ["clock","apple","ball","bike","dog","cat","elephant","flower","grass","king","door","keys"];
+	add_images = ""
+		for(var x=0; x<imageList.length;x++) {
+/*			add_images += "<div id='ele_"+x+"' class='subClass align_"+x+"' onclick='passVal("+x+")> '"+imageList[x]+"</div>";*/
+		
+			add_images += "<div id='ele_"+x+"' class='subClass align_"+x+"' onclick='passVal("+x+")'> "+imageList[x]+" </div> ";
+
+		}
+	//testImage = "Elephant "
+
+	$('#main_Elements').append(add_images);
+
+	$('#source_image').append(testImage); 
+
+
+	function passVal(x)
+	{
+		if (x == 6) {
+			alert('correct')
+		}else {
+			alert('wrong');
+		}
+	}
+	</script>
+
+</html>
